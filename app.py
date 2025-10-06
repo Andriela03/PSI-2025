@@ -12,7 +12,7 @@ def contato():
     email = "maria@gmail.com"
     return render_template('contato.html', nome = nome, email = email)
 
-@app.route('/perfil', defaults = {'nome': 'fulano'})
+@app.route('/perfil', defaults = {'usuario': 'fulano'})
 @app.route('/perfil/<usuario>')
 def perfil(usuario):
     usuario = "fulano"
