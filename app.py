@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -35,6 +35,21 @@ def exemplo():
 @app.route('/exemplo2')
 def exemplo2():
     return render_template('exemplo2.html')
+
+@app.route('/dados')
+def dados():
+    return render_template('dados.html')
+
+@app.route("/recebedados", methods = ['POST'])
+def recebedados():
+    nome = request.form['nome']
+    telefone = request.form['telefone']
+    estado = request.form['estado']
+    # Para aparecer mais de uma opção na tela do usuário.
+    #Existe a opção get e a post. 
+    escolaridade = request.form.getlist('esc')
+    return f"{nome} - {telefone} - {estado} - {escolaridade}"
+
 
 if __name__ == "__main__":
     app.run()

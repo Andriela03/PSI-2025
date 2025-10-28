@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{url_for('recebedados')}}" method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+        <br>
+        <label>Telefone:<label/>
+        <input type="text" name="telefone">
+        <br> <br>
+        <select name="estado">
+            <option value="RN">RN</option>
+            <option value="PB">PB</option>
+            <option value="PE">PE</option>
+        </select>
+        <br> <br>
+        <input type="radio" name="esc" value="fund">Fundamental <br>
+        <input type="radio" name="esc" value="med">Médio <br>
+        <input type="radio" name="esc" value="sup">Superior<br>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
